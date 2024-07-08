@@ -441,16 +441,17 @@ header.sticky .log-btn-wrap {
     justify-content: center;
     min-height: 100vh;
     background: #081d31;
+    flex-direction: column;
 }
 
 .Philosophy {
     width: 80%;
-    height: 20%
+    text-align: center;
 }
 
 .Philosophy h1 {
-    padding-left: 5%;
-    font-size: 4rem;
+    padding: 0 5%;
+    font-size: 2.5rem;
     color: #fff;
     font-weight: 550;
 }
@@ -476,18 +477,45 @@ header.sticky .log-btn-wrap {
     animation: none;
 }
 
+.Car {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Car img {
+    width: 100%;
+    max-width: 700px;
+}
+
 @keyframes blink {
     50% {
         opacity: 0;
     }
 }
 
-.Philosophy .car {
-    width: 700px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+/* Media Queries */
+@media (min-width: 768px) {
+    .phil {
+        flex-direction: row;
+    }
+    
+    .Philosophy {
+        text-align: left;
+    }
+    
+    .Philosophy h1 {
+        font-size: 3.5rem;
+    }
 }
+
+@media (min-width: 992px) {
+    .Philosophy h1 {
+        font-size: 4rem;
+    }
+}
+
 
 /* video */
 .car-video {
@@ -774,46 +802,33 @@ header.sticky .log-btn-wrap {
     color: #C9CCD3;
     padding-top: 20px;
     font-size: 70px;
-    /* font-family: 'Roboto Mono', monospace; */
 }
 
 .values {
     height: auto;
-    /* Adjust height as necessary based on content */
     min-height: 60vh;
-    /* Ensure container covers the viewport height */
     width: 100%;
-    /* background-color: rgb(0, 0, 0); */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    /* Center items vertically */
     padding: 20px;
-    /* Add padding to container */
     box-sizing: border-box;
-
 }
 
 .cards {
     position: relative;
-    /* Ensure the container is positioned relative */
     overflow: hidden;
-    /* font-family: "Poppins", sans-serif; */
-    display: flex;
-    overflow: hidden;
-    /* Ensure content within .cards is not visible outside */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
 }
 
 .cards img {
     background-color: white;
-    height: 150px;
-    max-width: 150%;
+    height: 160px;
+    max-width: 160%;
     margin: 15px;
     padding: 20px;
     border-radius: 30px;
@@ -822,15 +837,8 @@ header.sticky .log-btn-wrap {
     background: linear-gradient(to bottom, rgba(239, 239, 244, 0.893) 8%, rgba(76, 76, 77, 0.795) 100%);
 }
 
-/*.cards img:hover {
-    transform: scale(1.1); /* Scale the image to 110% on hover 
-}
-*/
-
-
 .cards::after {
     content: attr(data-text);
-    /* Use the attribute as content */
     position: absolute;
     top: 50%;
     left: 50%;
@@ -839,29 +847,40 @@ header.sticky .log-btn-wrap {
     color: white;
     font-size: 30px;
     text-align: center;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, font-size 0.3s ease;
 }
 
 .cards:hover img {
     transform: scale(1.1);
-    /* Scale the image to 0 on hover */
     opacity: 0;
-    /* Hide the image */
 }
 
 .cards:hover::after {
     opacity: 1;
-    /* Show the text */
 }
 
 @media (max-width: 800px) {
     .cards img {
         width: 90px;
         height: 90px;
-        /* Adjust width to fit two cards per row on smaller screens */
-        font-size: 5px;
+    }
+
+    .cards::after {
+        font-size: 15px; /* Adjust font size for smaller screens */
     }
 }
+
+@media (max-width: 500px) {
+    .cards img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .cards::after {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+}
+
 
 
 /* footer */
