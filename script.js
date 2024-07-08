@@ -30,13 +30,13 @@ dots[i].className = dots[i].className.replace(" active", "");
 }
 slides[slideIndex-1].style.display = "block";  
 dots[slideIndex-1].className += " active";
-setTimeout(showSlides, 2000); // Change image every 2 seconds
+setTimeout(showSlides, 3000); // Change image every 2 seconds
 }
 
 // Philosophy
 
 const dynamicText = document.querySelector("h1 span");
-const words = ["a world created for the young","the heart of choices","a place where connections are cherished","Maruti Suzuki Arena"];
+const words = ["a World Created for the Young","the Heart of Choices","a Place Where Connections are Cherished","Maruti Suzuki Arena"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -59,27 +59,6 @@ const typeEffect = () => {
     }
 }
 typeEffect();
-
-// Car Video
-
-const videoSection = document.querySelector('.car-video');
-const options = {
-    threshold: 0.5 // Trigger at 50% of the section being visible
-};
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            videoSection.classList.add('active');
-        } else {
-            videoSection.classList.remove('active');
-        }
-    });
-}, options);
-
-observer.observe(videoSection);
-
-// car section 
 
 const slider = document.querySelector(".items");
 		const slides = document.querySelectorAll(".item");
